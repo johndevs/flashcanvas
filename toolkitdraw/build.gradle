@@ -1,0 +1,22 @@
+vaadin {
+	widgetset = 'fi.jasoft.toolkitdraw.ToolkitDrawWidgetSet'
+}
+
+dependencies {
+        compile project(':addon')
+	compile group: 'org.vaadin.addons', name:'vaadin-colorpicker', version:'1.1.0'
+}
+
+war {
+        // WAR filename
+        archiveName = 'ToolkitDraw.war'
+
+        dependsOn test
+
+        // Add sources
+        webInf{
+                into('classes'){
+                        from sourceSets.main.allJava
+                }
+        }
+}

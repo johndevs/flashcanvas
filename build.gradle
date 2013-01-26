@@ -1,0 +1,14 @@
+allprojects {
+	group = 'fi.jasoft'
+	version = project.hasProperty('BUILD_VERSION') ? getProperty('BUILD_VERSION') : 'development';
+}
+
+
+subprojects{
+	apply from: 'http://plugins.jasoft.fi/vaadin.plugin'
+        apply plugin: 'eclipse'
+
+        vaadin {
+                version = '6.8.7'
+        }
+}
